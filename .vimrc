@@ -15,8 +15,8 @@ set hlsearch
 set ignorecase
 set smartcase
 
-" :W to sudo save a file
-command W w !sudo tee % > /dev/null
+" :W to save a file like normal
+command W w
 
 " Spam F5 to kill off whitespace, because, you know, you hit space sometimes
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
