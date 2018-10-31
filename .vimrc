@@ -24,6 +24,9 @@ command WW w !sudo tee % > /dev/null
 " Spam F5 to kill off whitespace, because, you know, you hit space sometimes
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
+" Remove last search highlight
+command rh let @/ = ""
+
 " Better Movement between panes
 map <C-j> <C-W>j
 map <C-k> <C-W>k
