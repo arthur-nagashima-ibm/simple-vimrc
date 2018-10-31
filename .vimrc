@@ -18,8 +18,17 @@ set smartcase
 " :W to save a file like normal
 command W w
 
+" :WW to save a file as sudo
+command WW w !sudo tee % > /dev/null
+
 " Spam F5 to kill off whitespace, because, you know, you hit space sometimes
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Better Movement between panes
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " Brace highlighting
 syn match Braces display '[{}()\[\]]'
