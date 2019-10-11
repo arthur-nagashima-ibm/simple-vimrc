@@ -6,9 +6,10 @@ set number
 set nowrap
 set mouse=a
 syntax on
+set termguicolors
 
 " Need to add this back once I find a good scheme
-" colorscheme 
+" colorscheme
 
 " Better searching is a must have
 set hlsearch
@@ -20,6 +21,9 @@ command W w
 
 " :WW to save a file as sudo
 command WW w !sudo tee % > /dev/null
+
+" :Q to force quit
+command Q q!
 
 " Spam F5 to kill off whitespace, because, you know, you hit space sometimes
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
