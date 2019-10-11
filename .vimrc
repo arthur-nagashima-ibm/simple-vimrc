@@ -5,11 +5,31 @@ set smartindent
 set number
 set nowrap
 set mouse=a
-syntax on
-set termguicolors
 
-" Need to add this back once I find a good scheme
-" colorscheme
+" install vim-plug with 
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+" Plugins using manager vim-plug
+cal plug#begin('~/.vim/plugged')
+
+" Install candid color scheme
+Plug 'flrnprz/candid.vim'
+
+" Install plastic color scheme
+Plug 'flrnprz/plastic.vim'
+
+" Install nerdtree; A file tree explorer
+Plug 'scrooloose/nerdtree'
+
+" end of plugins
+call plug#end()
+
+syntax on
+set background=dark
+colorscheme candid
+
+set termguicolors
 
 " Better searching is a must have
 set hlsearch
@@ -36,6 +56,9 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" Add map to opening a nerdTree
+map <C-t> :NERDTreeToggle<CR>
 
 " Brace highlighting
 syn match Braces display '[{}()\[\]]'
