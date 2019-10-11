@@ -2,7 +2,7 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set smartindent
-set number
+set relativenumber
 set nowrap
 set mouse=a
 syntax on
@@ -10,7 +10,7 @@ set termguicolors
 
 " Need to add this back once I find a good scheme
 " colorscheme
-
+"
 " Better searching is a must have
 set hlsearch
 set ignorecase
@@ -36,6 +36,18 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+nnoremap <C-n> :call RelativeNumberToggle()<cr>
+
+function! RelativeNumberToggle()
+    if &relativenumber
+        set number
+        set norelativenumber
+    else
+        set nonumber
+        set relativenumber
+    endif
+endfunction
 
 " Brace highlighting
 syn match Braces display '[{}()\[\]]'
