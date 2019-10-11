@@ -2,7 +2,7 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set smartindent
-set number
+set relativenumber
 set nowrap
 set mouse=a
 
@@ -56,6 +56,18 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+nnoremap <C-n> :call RelativeNumberToggle()<cr>
+
+function! RelativeNumberToggle()
+    if &relativenumber
+        set number
+        set norelativenumber
+    else
+        set nonumber
+        set relativenumber
+    endif
+endfunction
 
 " Add map to opening a nerdTree
 map <C-t> :NERDTreeToggle<CR>
