@@ -10,6 +10,8 @@ set mouse=a
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+" install plugins with :PlugInstall
+
 " Plugins using manager vim-plug
 cal plug#begin('~/.vim/plugged')
 
