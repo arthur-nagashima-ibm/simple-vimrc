@@ -50,7 +50,7 @@ command Q q!
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Remove last search highlight
-command RH let @/ = ""
+command RH let @/ = " "
 
 " Better Movement between panes
 map <C-j> <C-W>j
